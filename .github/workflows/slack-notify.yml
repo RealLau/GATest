@@ -8,9 +8,9 @@ jobs:
 
       - uses: actions/checkout@v2
       - name: Install Dependencies
-          run: npm install
+        run: npm install
       - name: Run all Tests
-          run: npm test
+        run: npm test
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
         env:
