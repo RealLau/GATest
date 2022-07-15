@@ -9,7 +9,7 @@ jobs:
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.OMNI_SERVICE_CN_TEST_SECRET }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,eventName,ref,workflow
