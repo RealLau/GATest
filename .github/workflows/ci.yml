@@ -15,7 +15,7 @@ jobs:
           reporter: mocha-json
       - uses: 8398a7/action-slack@v2
         with:
-          type: ${{ job.status }}
+          status: ${{ job.status }}
           username: CI status
           icon_emoji: ':octocat:'
           channel: 'U02S2VAFYUS'
