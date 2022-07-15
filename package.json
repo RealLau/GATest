@@ -4,7 +4,7 @@
   "description": "For testing git CI actions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RealLau/GATest/issues"
   },
-  "homepage": "https://github.com/RealLau/GATest#readme"
+  "homepage": "https://github.com/RealLau/GATest#readme",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
 }
