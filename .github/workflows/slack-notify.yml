@@ -10,10 +10,7 @@ jobs:
         run: npm install
       - name: Run all Tests
         id: tests
-        run: |
-          echo "::set-output name=npm_test_result::$(npm test)\n"
-      - name: show res
-        run: echo ${{ steps.tests.outputs.npm_test_result }}
+        run: npm test
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
