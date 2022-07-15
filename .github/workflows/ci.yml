@@ -8,7 +8,7 @@ jobs:
       - run: npm install                  # install packages
       - run: npm test                     # run tests (configured to use jest-junit reporter)
       - uses: dorny/test-reporter@v1
-        if: always()        # run this step even if previous step failed
+        if: success() || failure()        # run this step even if previous step failed
         with:
           name: test-results
           path: test-results.json
