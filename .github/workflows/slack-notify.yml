@@ -5,19 +5,19 @@ jobs:
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Install Dependencies
+        uses: actions/checkout@v2
         run: npm install
       - name: Run all Tests
         id: tests
         run: |
           echo "::set-output name=npm_test_result::$(npm test)\n"
       - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: ${{ secrets.SLACK_NOTIFICATION_CHANNEL }}
-          SLACK_MESSAGE: ${{ join(steps.tests.outputs.*, '\n') }}
+          SLACK_MESSAGE: ${{ join(steps.tests.outputs.npm_test_result, '\n') }}
           SLACK_TITLE: omni-service ci test result
 #        with:
 #          status: ${{ job.status }}
