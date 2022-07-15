@@ -8,7 +8,8 @@ jobs:
       - run: npm install                  # install packages
       - run: npm test                     # run tests (configured to use jest-junit reporter)
       - uses: actions/upload-artifact@v2  # upload test results
-        if: success() || failure()        # run this step even if previous step failed
+        if: always()        # run this step even if previous step failed
         with:
           name: test-results
           path: test-results.json
+          reporter: mocha-json
