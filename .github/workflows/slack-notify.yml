@@ -16,7 +16,7 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}
-          SLACK_MESSAGE: ${{steps.tests.outputs}}
+          SLACK_MESSAGE: ${{steps.tests.outputs.*}}
           SLACK_TITLE: omni-service ci test result
 #        with:
 #          status: ${{ job.status }}
