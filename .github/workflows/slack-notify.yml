@@ -13,7 +13,7 @@ jobs:
         id: tests
         run: npm test
       - name: Slack Notification
-        uses: 8398a7/action-slack@v3
+        uses: rtCamp/action-slack-notify@master
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_MESSAGE: ${{steps.tests.outputs.stdout}}
