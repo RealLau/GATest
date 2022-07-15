@@ -19,7 +19,6 @@ jobs:
           username: CI status
           icon_emoji: ':rocket:'
           channel: 'U02S2VAFYUS'
-          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest # selectable (default: repo,message)
         if: always()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
