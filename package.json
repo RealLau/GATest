@@ -4,7 +4,7 @@
   "description": "For testing git CI actions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter mochawesome"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
