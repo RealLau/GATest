@@ -14,7 +14,7 @@ jobs:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: ${{ secrets.SLACK_NOTIFICATION_CHANNEL }}
           SLACK_MESSAGE: ${{ join(steps.tests.outputs.*, '\n') }}
           SLACK_TITLE: omni-service ci test result
