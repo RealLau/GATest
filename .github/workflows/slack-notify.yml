@@ -10,12 +10,19 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Run all Tests
+        id: tests
         run: npm test
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,eventName,ref,workflow
-        if: always()
+          SLACK_MESSAGE: ${{steps.tests.outputs.stdout}}
+          SLACK_TITLE: omni-service ci test result
+#        with:
+#          status: ${{ job.status }}
+#          fields: repo,message,commit,author,eventName,ref,workflow
+#          payload: |
+#            {
+#              "result": ${{steps.tests.outputs.stdout}}
+#            }
+#        if: always()

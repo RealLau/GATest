@@ -4,7 +4,7 @@
   "description": "For testing git CI actions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RealLau/GATest#readme",
   "devDependencies": {
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3"
   }
 }
