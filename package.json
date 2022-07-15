@@ -1,0 +1,19 @@
+{
+  "name": "gatest",
+  "version": "1.0.0",
+  "description": "For testing git CI actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealLau/GATest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RealLau/GATest/issues"
+  },
+  "homepage": "https://github.com/RealLau/GATest#readme"
+}
