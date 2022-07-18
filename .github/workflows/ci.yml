@@ -1,7 +1,5 @@
 name: 'CI'
 on: push
-  schedule:
-    - cron: '*/5 * * * *'
 jobs:
   build-test:
     runs-on: ubuntu-latest

@@ -1,0 +1,26 @@
+on:
+  schedule:
+    - cron:  '*/5 * * * *'
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm test
+      - uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: test-results
+          path: test-results.json
+          reporter: mocha-json
+      - uses: 8398a7/action-slack@v2
+        with:
+          status: ${{ job.status }}
+          username: CI status
+          icon_emoji: ':rocket:'
+          channel: 'U02S2VAFYUS'
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
